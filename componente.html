@@ -1,0 +1,293 @@
+<div class="componente">
+    
+    <!------- estilo css-------->
+    <style>
+        .componente{
+            display: flex;
+            background-image: url('image.png');
+            background-size: cover;
+            height: 500px;
+            width: 500px;
+        }
+    </style>
+
+    <!------- reproductor -------->
+    <div class="reproductor">
+    <!------- estilo reproductor -------->
+    <style>
+        .reproductor{
+            display: flex;
+            border-radius: 40px / 100px;
+            height: 60px;
+            width: 60%;
+            display: flex;
+            background-color: #0F2219;
+            position: relative;
+            top: 320px;
+            left: 20%;
+            right: 20%;
+        }
+
+    </style>
+
+    <!------- boton play -------->    
+        <button id="buttonPlay" type="button" class="buttonplay" onclick="playAudio()" tabindex="0">
+            <!------- estilo boton play -------->
+            <style>
+                .buttonplay {
+                    display: flex;
+                    border: none;
+                    margin-left: 10px;
+                    margin-top: 7px;
+                    width: 48px;
+                    background-image: url('play.png');
+                    background-size: cover;
+                    height: 48px;
+                    transition: box-shadow 1s ease;
+                    outline: none;
+                }
+
+                .buttonplay.playing {
+                    background-image: url('pause.png');
+                }
+
+                .buttonplay:hover {
+                    cursor: pointer;
+                    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.4);
+                    transition: box-shadow 1s ease;
+                }
+            </style>
+            <script>
+                var isPlaying = false;
+                var audio = new Audio("https://stream.radios.red/radionauta.mp3");
+                function playAudio() {
+                
+                    if (isPlaying) {
+                        audio.pause();
+                    } else {
+                        audio.play();
+                    }
+                    isPlaying = !isPlaying;
+                    buttonPlay.classList.toggle('playing');
+                }
+            
+            </script>
+            
+        </button>
+
+    <!------------ barra de movimiento --------> 
+    <div class="barramovimiento">
+    <head>         
+        <!------- estilo barra de movimiento -------->        
+        <style type="text/css">
+            body{
+                background:#ECF0F1;
+                }
+            .wrapper{
+                width:54px;
+                height:25px;
+                position:absolute;
+                top:50%;
+                left:50%;
+                margin-left:-27px;
+                margin-top:-10px;
+                }
+            #preloader_1{
+                    position:relative;
+                }
+                
+            #preloader_1 span{
+                    display:block;
+                    bottom:0px;
+                    width: 9px;
+                    height: 5px;
+                    background:#9b59b6;
+                    position:absolute;
+                    -webkit-animation: preloader_1 1.5s	infinite ease-in-out;
+                    -moz-animation: preloader_1 1.5s	infinite ease-in-out;
+                    -o-animation: preloader_1 1.5s	infinite ease-in-out;
+                    animation: preloader_1 1.5s	infinite ease-in-out;
+                
+                }
+                #preloader_1 span:nth-child(2){
+                    left:11px;
+                    -webkit-animation-delay:.2s;
+                    -moz-animation-delay:.2s;
+                    -o-animation-delay:.2s;
+                    animation-delay:.2s;
+                }
+                #preloader_1 span:nth-child(4){
+                    left:22px;
+                    -webkit-animation-delay:.4s;
+                    -moz-animation-delay:.4s;
+                    -o-animation-delay:.4s;
+                    animation-delay:.4s;
+                }
+                #preloader_1 span:nth-child(5){
+                    left:33px;
+                    -webkit-animation-delay:.3s;
+                    -moz-animation-delay:.3s;
+                    -o-animation-delay:.3s;
+                    animation-delay:.3s;
+                }
+                #preloader_1 span:nth-child(3){
+                    left:44px;
+                    -webkit-animation-delay:.15s;
+                    -moz-animation-delay:.15s;
+                    -o-animation-delay:.15s;
+                    animation-delay:.15s;
+                }
+                @-webkit-keyframes preloader_1 {
+                    0% {height:5px;-webkit-transform:translateY(0px);
+                    -moz-transform:translateY(0px);
+                    -o-transform:translateY(0px);
+                    transform:translateY(0px);
+                    background:#9b59b6;}
+                    25% {height:25px;-webkit-transform:translateY(15px);
+                    -moz-transform:translateY(15px);
+                    -o-transform:translateY(15px);
+                    transform:translateY(15px);
+                    background:#09F;}
+                    50% {height:5px;-webkit-transform:translateY(0px);
+                    -moz-transform:translateY(0px);
+                    -o-transform:translateY(0px);
+                    transform:translateY(0px);
+                    background:#9b59b6;}
+                    100% {height:5px;-webkit-transform:translateY(0px);background:#9b59b6;}
+                }
+                @-webkit-keyframes preloader_1 {
+                    0% {height:5px;-webkit-transform:translateY(0px);
+                    -moz-transform:translateY(0px);
+                    -o-transform:translateY(0px);
+                    transform:translateY(0px);
+                    background:#9b59b6;}
+                    25% {height:25px;-webkit-transform:translateY(15px);
+                    -moz-transform:translateY(15px);
+                    -o-transform:translateY(15px);
+                    transform:translateY(15px);
+                    background:#09F;}
+                    50% {height:5px;-webkit-transform:translateY(0px);
+                    -moz-transform:translateY(0px);
+                    -o-transform:translateY(0px);
+                    transform:translateY(0px);
+                    background:#9b59b6;}
+                    100% {height:5px;-webkit-transform:translateY(0px);background:#9b59b6;}
+                }
+                @-webkit-keyframes preloader_1 {
+                    0% {height:5px;-webkit-transform:translateY(0px);
+                    -moz-transform:translateY(0px);
+                    -o-transform:translateY(0px);
+                    transform:translateY(0px);
+                    background:#9b59b6;}
+                    25% {height:25px;-webkit-transform:translateY(15px);
+                    -moz-transform:translateY(15px);
+                    -o-transform:translateY(15px);
+                    transform:translateY(15px);
+                    background:#09F;}
+                    50% {height:5px;-webkit-transform:translateY(0px);
+                    -moz-transform:translateY(0px);
+                    -o-transform:translateY(0px);
+                    transform:translateY(0px);
+                    background:#9b59b6;}
+                    100% {height:5px;-webkit-transform:translateY(0px);background:#9b59b6;}
+                }
+                @-webkit-keyframes preloader_1 {
+                    0% {height:15px;-webkit-transform:translateY(0px);
+                    -moz-transform:translateY(0px);
+                    -o-transform:translateY(0px);
+                    transform:translateY(0px);
+                    background:#9b59b6;}
+                    25% {height:25px;-webkit-transform:translateY(15px);
+                    -moz-transform:translateY(15px);
+                    -o-transform:translateY(15px);
+                    transform:translateY(15px);
+                    background:#09F;}
+                    50% {height:5px;-webkit-transform:translateY(0px);
+                    -moz-transform:translateY(0px);
+                    -o-transform:translateY(0px);
+                    transform:translateY(0px);
+                    background:#9b59b6;}
+                    100% {height:5px;-webkit-transform:translateY(0px);background:#9b59b6;}
+                }
+                
+            
+                
+        </style>
+    
+    </head>
+    
+    <body>
+    
+        <div class="wrapper">
+    <div id="preloader_1">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </div>
+        </div>
+    
+    </body>
+    
+    </div>
+
+    <!------------ volumen --------> 
+    <div class="botonvolumen">
+        <!------------ estilo volumen --------> 
+        <style>
+            .botonvolumen{
+                margin-top: 8px;
+                background-image: url(volumen.png);
+                background-size: cover;
+                height: 50px;
+                width: 50px;
+                margin-left: auto;
+                margin-right: 10px;
+            }
+
+            .botonvolumen:hover {
+                cursor: pointer;
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .botonvolumen:hover .barravolumen{
+                visibility: visible;
+                opacity: 1;
+
+            }
+        </style>
+
+        <div class="barravolumen">
+            <input type="range" class="volumen" min="0" max="1" step="0.1" value="1">
+            <script>
+                var volumen = document.querySelector('.volumen');
+                    volumen.addEventListener('input', function() {
+                    audio.volume = volumen.value;
+                    });
+
+            </script>
+            <!------------ estilo volumen --------> 
+            <style>
+                .barravolumen{
+                    visibility: hidden;
+                    writing-mode: bt-lr;
+                    transform:rotate(-90deg);
+                    position: relative;
+                    bottom: 35px;
+                }
+                .barravolumen::-webkit-slider-runnable-track {
+                    background-color: #FF5757;
+                }
+
+
+
+            </style>
+
+        </div>
+
+    </div>  
+
+    </div>
+</div>
