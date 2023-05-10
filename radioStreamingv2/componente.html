@@ -1,0 +1,184 @@
+<div class="componente">
+    
+    <!------- estilo css-------->
+    <style>
+        .componente{
+            position: absolute;
+            background-image: url('image.png');
+            background-size: cover;
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+
+    <!------- reproductor -------->
+    <div class="reproductor">
+    <!------- estilo reproductor -------->
+    <style>
+        .reproductor{
+            position: absolute;
+            border-radius: 8px;
+            width: 270px;
+            height: 70px;
+            display: flex;
+            background-color: #000;
+            top: 190px;
+            margin-left: 15px;
+        }
+
+    </style>
+
+    <!------- boton play -------->    
+        <button id="buttonPlay" type="button" class="buttonplay" onclick="playAudio()" tabindex="0">
+            <!------- estilo boton play -------->
+            <style>
+                .buttonplay {
+                    display: flex;
+                    border: none;
+                    margin-left: 10px;
+                    margin-top: 10px;
+                    width: 50px;
+                    background-image: url('play.png');
+                    background-size: cover;
+                    height: 50px;
+                    transition: box-shadow 1s ease;
+                    outline: none;
+                }
+
+                .buttonplay:hover {
+                    cursor: pointer;
+                    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8);
+                    transition: box-shadow 1s ease;
+                }
+            </style>
+            <script>
+                var isPlaying = false;
+                var audio = new Audio("https://stream.radios.red/radionauta.mp3");
+                function playAudio() {
+                
+                    if (!isPlaying) {
+                        audio.play();
+                        isPlaying = !isPlaying;
+                    }
+                    
+                }
+            
+            </script>
+            
+        </button>
+
+
+ <!------- boton pausa -------->    
+ <button type="button" class="buttonpausa" onclick="playA()" tabindex="0">
+    <!------- estilo boton pausa -------->
+    <style>
+        .buttonpausa {
+            display: flex;
+            border: none;
+            margin-left: 10px;
+            margin-top: 10px;
+            width: 50px;
+            background-image: url('pause.png');
+            background-size: cover;
+            height: 50px;
+            transition: box-shadow 1s ease;
+            outline: none;
+        }
+
+        .buttonpausa:hover {
+            cursor: pointer;
+            box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8);
+            transition: box-shadow 1s ease;
+        }
+    </style>
+    <script>
+        var isPlaying = false;
+        var audio = new Audio("https://stream.radios.red/radionauta.mp3");
+        function playA() {
+        
+            if (isPlaying) {
+                audio.pause();
+                isPlaying = !isPlaying;
+            } 
+            
+        }
+    
+    </script>
+    
+</button>
+
+    <!------------ volumen --------> 
+    <div class="botonvolumen">
+        <!------------ estilo boton volumen --------> 
+        <style>
+            .botonvolumen{
+                margin-top: 20px;
+                background-image: url(volumen.png);
+                background-size: cover;
+                height: 30px;
+                width: 30px;
+                margin-left: 10px;
+                
+            }
+
+        </style>
+
+        <div class="barravolumen">
+            <input type="range" class="volumen" min="0" max="1" step="0.1" value="1">
+            <script>
+                var volumen = document.querySelector('.volumen');
+                    volumen.addEventListener('input', function() {
+                    audio.volume = volumen.value;
+                    });
+
+            </script>
+            <style>
+            
+                .barravolumen:hover {
+                    cursor: pointer;
+        
+                }
+
+                .volumen {
+                    width: 95px;
+                    height: 7px;
+                    background-color: #FF5757;
+                    -webkit-appearance: none;
+                    border-radius: 5px;
+                    outline: none;
+                    transition: background-color 0.2s ease-in-out;
+                }
+
+                .volumen::-moz-range-progress{
+                    background-color: #f0f0f0;
+                    height: 7px;
+                    border-radius: 5px;
+                    -webkit-appearance: none;
+                }
+
+                .volumen::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    width: 18px;
+                    height: 18px;
+                    background-color: #FF5757;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+                }
+
+                input {
+                    margin-top: 10px;
+                    margin-left: 35px;
+                    width: 85px;
+                }
+                input:hover {
+                    cursor: pointer;
+                }
+            </style>
+            </style>
+        </div>
+
+    </div>  
+
+    </div>
+</div>
