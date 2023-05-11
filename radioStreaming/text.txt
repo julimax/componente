@@ -1,0 +1,29 @@
+Check ssh sudo logs (Successful connection attempts)
+sudo zgrep 'Accepted \(publickey\|password\)' /var/log/auth.log*
+
+Check SSH logs (Successful ssh connection attempts)
+sudo cat /var/log/auth.log* | grep 'sshd.*Accepted'
+
+Check files auth.log* weren't corrupted using File Encoding Check
+1 sudo file /var/log/auth.log*
+
+Check Binary Data to see if there’s any file corruption (strings command to filter out any non-text data and then compare the
+sizes of the two files)
+strings /var/log/auth.log > /tmp/auth_strings.log
+strings /var/log/auth.log.1 > /tmp/auth_strings.log.1
+ls -lh /var/log/auth.log /tmp/auth_strings.log
+ls -lh /var/log/auth.log.1 /tmp/auth_strings.log.1
+
+Check sudo commands logs
+grep -i sudo /var/log/auth.log*
+
+2--
+
+Is it trying to communicate out?
+
+
+netstat -tuna
+#Run the following command in the ports that appears in the command above, to check which service is running
+sudo lsof -i :<PORT>
+
+
