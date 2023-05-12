@@ -1,0 +1,33 @@
+<div class="botonres">
+    <button class="botonmagico">
+        click here
+    </button>
+    <style>
+        .botonres {
+            display: none;
+
+        }
+        .botonmagico{
+            color: blue;
+            background-color: yellow;
+            border: 2px solid blue;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+        .botonmagico:hover{
+            cursor: pointer;
+        }
+        .botonmagico:active {
+            background-color: #cccccc;
+            border: 2px solid #999999;
+            position: relative;
+            top: 2px;
+        }
+        @media screen and (max-width: 900px){
+            .botonres{
+                display: block;
+                }
+        }
+    </style>
+</div>
